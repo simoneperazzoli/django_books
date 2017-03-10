@@ -45,7 +45,13 @@ DJANGO_APPS = [
     # 'django.contrib.humanize',
 
     # Admin
+    'mptt',
+    'django_mptt_admin',
+    'grappelli',
     'django.contrib.admin',
+
+    # books
+    'books',
 ]
 THIRD_PARTY_APPS = [
     'crispy_forms',  # Form layouts
