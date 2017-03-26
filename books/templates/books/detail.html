@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+
+            <img src="/media/{{ book.cover }}" alt="" width="60%" height="60%">
+            <br>
+            <br>
+
+            <p><b>Title: </b>{{ book.title }}</p>
+
+            <p><b>Publisher: </b>{{ book.publisher }}</p>
+
+            <p><b>Year: </b>{{ book.year }}</p>
+
+            <p><b>Pages: </b>{{ book.pages }}</p>
+            <hr>
+            {% load mptt_tags %}
+
+            <ul>
+                {% recursetree nodes %}
+
+                    {{ node.name }}
+                    {% if not node.is_leaf_node %}
+                     /   {{ children }}
+                    {% endif %}
+
+                {% endrecursetree %}
+            </ul>
+
+
+            <hr>
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+{% endblock content %}
