@@ -52,6 +52,10 @@ DJANGO_APPS = [
 
     # books
     'books',
+
+    # api
+    'rest_framework',
+
 ]
 THIRD_PARTY_APPS = [
     'crispy_forms',  # Form layouts
@@ -270,3 +274,12 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
