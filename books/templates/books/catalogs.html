@@ -9,7 +9,9 @@
 <ul>
     {% recursetree nodes %}
         <li>
-            <a href="{{ node.id }}">      {{ node.name }}</a>
+            <!--<a href="{{ node.id }}">  -->
+              {{ node.name }}
+            <!--</a>-->
 
             {% if not node.is_leaf_node %}
                 <ul class="children">
