@@ -55,6 +55,8 @@ DJANGO_APPS = [
 
     # api
     'rest_framework',
+    # celery
+     'django_celery_results',
 
 ]
 THIRD_PARTY_APPS = [
@@ -283,3 +285,4 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
