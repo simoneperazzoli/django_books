@@ -5,6 +5,7 @@ from django.db import models
 import datetime
 from django.utils.translation import ugettext as _
 from versatileimagefield.fields import VersatileImageField
+from .tasks import add as tadd
 
 YEAR_CHOICES = [(r, r) for r in range(1960, datetime.date.today().year + 1)]
 
@@ -35,6 +36,10 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        tadd.delay(10, 100)
+        super(Book, self).save(*args, **kwargs)
 
 
 class Publisher(models.Model):
